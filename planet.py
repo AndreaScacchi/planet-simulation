@@ -49,6 +49,9 @@ class Planet:
 
             pygame.draw.lines(win, self.color, False, updated_points, 2)
 
+        if not self.sun:
+            distance_text = FONT.render(f"{round(self.distance_to_sun/1000, 1)}km", 1, WHITE)
+
         pygame.draw.circle(win, self.color, (x, y), self.radius)
 
     def attraction(self, other):
